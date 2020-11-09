@@ -22,6 +22,5 @@ mongoose.connect(DATABASE_URL,{useNewUrlParser:true,useUnifiedTopology:true})
     })
 .catch(err=>{
     console.log(err.message)
-    alert('could not connect to database')
     })
 mongoose.set('useFindAndModify',false)
