@@ -12,7 +12,7 @@ app.use('/posts',postRoutes)
 dotenv.config()
 const DATABASE_URL =process.env.DATABASE_URL
 let PORT=process.env.PORT||5000
-app.route('/',(req,res)=>{
+app.get('/',(req,res)=>{
     return res.send('<h1>Memories api</h1>')
 })
 mongoose.connect(DATABASE_URL,{useNewUrlParser:true,useUnifiedTopology:true})
