@@ -8,11 +8,11 @@ const app=express()
 app.use(bodyParser.json({limit:"30mb",extended:true}));
 app.use(bodyParser.urlencoded({limit:"30mb",extended:true}))
 app.use(cors())
-app.use('/posts',postRoutes)
+app.use('/memories/posts',postRoutes)
 dotenv.config()
 const DATABASE_URL =process.env.DATABASE_URL
 let PORT=process.env.PORT||5000
-app.get('/',(req,res)=>{
+app.get('/memories',(req,res)=>{
     return res.send('<h1>Memories api</h1>')
 })
 mongoose.connect(DATABASE_URL,{useNewUrlParser:true,useUnifiedTopology:true})
